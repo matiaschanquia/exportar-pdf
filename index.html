@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Exportar a pdf</title>
+</head>
+<body>
+    <header class="header">
+        <h1>Exportar datos a PDF</h1>
+    </header>
+
+    <main class="main">
+        <section class="section-formulario">
+            <h2>Formulario</h2>
+            <form class="form active">
+                <label for="name">Nombre:</label>
+                <input class="input" type="text" id="name" name="name" required>
+                <label for="surname">Apellido:</label>
+                <input class="input" type="text" id="surname" name="surname" required>
+                <label for="email">Email:</label>
+                <input class="input" type="email" id="email" name="email" required>
+                <label for="comment">Comentario</label>
+                <textarea class="input" name="comment" id="comment" maxlength="150" required></textarea>
+                <button type="submit" class="btn-confirm">Confirmar</button>
+            </form>
+            <div class="resultado">
+                <div class="resultado-pdf">
+                    <h2>Resultado</h2>
+                    <p><span>Nombre:</span> </p>
+                    <p><span>Apellido:</span> </p>
+                    <p><span>Email:</span> </p>
+                    <p><span>Comentario:</span> </p>
+                </div>
+                <div class="buttons">
+                    <button class="btn-pdf">Enviar a pdf</button>
+                    <button class="btn-edit">Editar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <h2>Este es el footer</h2>
+    </footer>
+
+    <script src="./html2pdf.bundle.min.js"></script>
+    <script src="./app.js" type="module"></script>
+</body>
+</html>
