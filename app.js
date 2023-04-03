@@ -1,4 +1,6 @@
 
+const inputsArray = [];
+const defaultParrafos = ["<span>Nombre:</span> ", "<span>Apellido:</span> ", "<span>Email:</span> ", "<span>Comentario:</span> "]
 
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector(".form");
@@ -7,31 +9,33 @@ document.addEventListener("DOMContentLoaded", () => {
     const inputs = document.querySelectorAll(".input");
     const btnPDF = document.querySelector(".btn-pdf");
     const btnEdit = document.querySelector(".btn-edit");
-    const parrafos = document.querySelectorAll(".resultado-pdf > p");
+    const datas = document.querySelectorAll(".data");
     
-    const inputsArray = [];
-    
-    inputs.forEach((input, index) => {
+    /* inputs.forEach((input, index) => {
         input.addEventListener("change", (e) => {
             inputsArray[index] = e.target.value;
         });
-    });
+    }); */
     
     form.addEventListener("submit", (e) => {
         e.preventDefault();
         form.classList.remove("active");
         resultado.classList.add("active");
-        inputsArray.forEach((item, index) => {
+        /* inputsArray.forEach((item, index) => {
+            parrafos[index].innerHTML = defaultParrafos[index];
             parrafos[index].innerHTML += item;
+        }); */
+        datas.forEach((data, index) => {
+            data.textContent = inputs[index].value;
         });
     });
     
     btnEdit.addEventListener("click", () => {
         resultado.classList.remove("active");
         form.classList.add("active");
-        inputsArray.forEach((_, index) => {
+        /* inputsArray.forEach((_, index) => {
             inputsArray[index] = "";
-        })
+        }) */
     })
     
     // --------------------------------
