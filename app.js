@@ -1,7 +1,4 @@
 
-const inputsArray = [];
-const defaultParrafos = ["<span>Nombre:</span> ", "<span>Apellido:</span> ", "<span>Email:</span> ", "<span>Comentario:</span> "]
-
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector(".form");
     const resultado = document.querySelector(".resultado");
@@ -11,20 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnEdit = document.querySelector(".btn-edit");
     const datas = document.querySelectorAll(".data");
     
-    /* inputs.forEach((input, index) => {
-        input.addEventListener("change", (e) => {
-            inputsArray[index] = e.target.value;
-        });
-    }); */
-    
     form.addEventListener("submit", (e) => {
         e.preventDefault();
         form.classList.remove("active");
         resultado.classList.add("active");
-        /* inputsArray.forEach((item, index) => {
-            parrafos[index].innerHTML = defaultParrafos[index];
-            parrafos[index].innerHTML += item;
-        }); */
         datas.forEach((data, index) => {
             data.textContent = inputs[index].value;
         });
@@ -33,9 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
     btnEdit.addEventListener("click", () => {
         resultado.classList.remove("active");
         form.classList.add("active");
-        /* inputsArray.forEach((_, index) => {
-            inputsArray[index] = "";
-        }) */
     })
     
     // --------------------------------
